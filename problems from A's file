@@ -1,0 +1,65 @@
+#include <iostream>
+using namespace std;
+
+int countDigits( int n, int d){
+    if(n<10){
+    return (n==d) ? 1 :0;   
+    }
+    
+    
+    
+    return (n % 10 == d) + countDigits(n/10, d);
+}
+
+
+int main(){
+    int n, d;
+    cin>>n>>d;
+    cout<<countDigits(n, d)<<endl;
+    return 0;
+}
+
+
+
+#include <iostream>
+using namespace std;
+
+int fib(int n){
+    if (n<2 && n>=0){
+        return n;
+    }
+    
+    
+    
+    return fib(n-1)+ fib(n-2);
+}
+
+int main(){
+    int n;
+    cin>>n;
+    fib(n);
+    cout<<fib(n);
+    return 0;
+}
+
+
+#include <iostream>
+using namespace std;
+
+int hammingWeight( int n){
+    if (n==0){
+        return 0;
+    }
+    
+    return n%2+ hammingWeight(n/2);
+}
+
+int main (){
+    int n;
+    cin>>n;
+    hammingWeight(n);
+    cout<<hammingWeight(n);
+    return 0;
+}
+
+
