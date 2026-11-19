@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+void printBaseNeg2(int n) {
+    if (n == 0) {
+        return;
+    }
+    
+    int r = n % (-2);
+    int q = n / (-2);
+    
+    if (r == -1) {
+        r = 1;
+        q = (n - r) / (-2);
+    }
+
+    printBaseNeg2(q); 
+    cout << r;        
+}
+
+void baseNeg2(int n) {
+    if (n == 0) {
+        cout << 0; 
+        return;
+    }
+    printBaseNeg2(n);
+}
+
+
+int main(){
+    int n;
+    cin>>n;
+    baseNeg2(n);
+    cout<< endl;
+    return 0;
+}
